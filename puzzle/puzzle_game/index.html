@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Memory Match</h1>
+            <div class="stats-panel">
+                <div class="stat-box">
+                    <span class="label">Time</span>
+                    <span class="value" id="time-display">00:00</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">Moves</span>
+                    <span class="value" id="moves-display">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">Difficulty</span>
+                    <select id="difficulty" class="custom-select">
+                        <option value="easy">Easy (4x3)</option>
+                        <option value="medium" selected>Medium (4x4)</option>
+                        <option value="hard">Hard (4x5)</option>
+                    </select>
+                </div>
+                <button id="restart-btn" class="glass-button">Restart / New Game</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="game-board" id="game-board">
+                <!-- Cards will be injected here by JS -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Win Modal -->
+    <div class="modal-overlay" id="win-modal">
+        <div class="modal-content">
+            <h2 class="gradient-text">You Won! 🎉</h2>
+            <p>You matched all pairs.</p>
+            <div class="final-stats">
+                <p>Time: <strong id="final-time">00:00</strong></p>
+                <p>Moves: <strong id="final-moves">0</strong></p>
+            </div>
+            <button id="play-again-btn" class="glass-button primary">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
